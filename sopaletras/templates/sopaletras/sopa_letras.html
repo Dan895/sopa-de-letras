@@ -1,0 +1,23 @@
+{% extends "sopaletras/layout.html" %}
+
+{% block content %}
+    
+    
+    <div class="col-md-4 offset-md-4">
+        <div class="card card-body bg-secondary text-center">
+            
+            <h1>Generar Sopa de Letras</h1>
+            
+            <form method="post" action="{% url 'generar' %}">
+                {% csrf_token %}
+        
+                <label class="form-label" for="palabras">Palabras (separadas por coma):</label><br>
+                <input class="form-control" type="text" id="palabras" name="palabras"><br>
+                <button class="btn btn-primary" type="submit">Generar Sopa de Letras</button>
+        
+            </form>
+        </div>
+    </div>
+    
+
+{% endblock content %}
